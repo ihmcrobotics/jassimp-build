@@ -19,6 +19,9 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s")
 
 
+find_package(JNI REQUIRED)
+include_directories(${JNI_INCLUDE_DIRS})
+
 add_subdirectory(assimp)
 
 
