@@ -68,3 +68,45 @@ jar {
       "Bundle-Vendor": "IHMC")
    }
 }
+
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+
+			groupId 'us.ihmc.thirdparty'
+			artifactId project.name
+			version "$version"
+			from components.java
+
+			pom.withXml {
+                asNode().children().last() + {
+                    resolveStrategy = Closure.DELEGATE_FIRST
+                    name project.name
+                    url project.ext.vcsUrl
+                    licenses {
+                        license {
+                            name project.ext.licenseName
+                            url project.ext.licenseURL
+                            distribution 'repo'
+                        }
+                    }
+                    developers {
+                        developer {
+                            id 'jsmith'
+                            name 'Jesper Smith'
+                            email 'jsmith@ihmc.us'
+                        }
+                    }
+                }
+
+        	}
+
+			artifact sourceJar {
+				classifier "sources"
+			}
+		}
+	}
+}
+
+def labels = ['ihmc', 'robotics', 'java', 'assets', 'models', '3d', 'thidrparty']
+ihmc.configureForIHMCOpenSourceBintrayPublish(false, "mavenJava", "maven-release", labels)
