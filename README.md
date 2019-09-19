@@ -35,11 +35,10 @@ The gradle build system is used to built the java code. When changing the C code
 
 To deploy the code locally
 ```
-gradle publishToMavenLocal
-
+gradle publish
 ```
 
 To deploy to bintray
 ```
-gradle bintrayUpload
+gradle publish -PpublishUrl=ihmcRelease
 ```
