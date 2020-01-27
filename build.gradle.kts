@@ -1,6 +1,7 @@
 plugins {
    id("us.ihmc.ihmc-build") version "0.19.7"
    id("us.ihmc.log-tools") version "0.3.1"
+   id("us.ihmc.ihmc-cd") version "1.8"
 }
 
 ihmc {
@@ -17,5 +18,5 @@ ihmc {
 ihmc.sourceSet("main").java.srcDirs("assimp/port/jassimp/jassimp/src/")
 
 mainDependencies {
-   compile("us.ihmc:ihmc-native-library-loader:1.1")
+   api("us.ihmc:ihmc-native-library-loader:1.1")
 }
