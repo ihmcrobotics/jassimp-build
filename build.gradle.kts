@@ -18,5 +18,5 @@ ihmc {
 ihmc.sourceSet("main").java.srcDirs("assimp/port/jassimp/jassimp/src/")
 
 mainDependencies {
-   api("us.ihmc:ihmc-native-library-loader:1.1")
+   api("us.ihmc:ihmc-native-library-loader:1.2")
 }
