@@ -6,7 +6,7 @@ plugins {
 
 ihmc {
    group = "us.ihmc"
-   version = "4.0.0-ihmc5"
+   version = "4.0.0-ihmc6"
    vcsUrl = "https://github.com/ihmcrobotics/jassimp-build"
    openSource = true
    maintainer = "Duncan Calvert"
